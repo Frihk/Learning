@@ -1,1 +1,1 @@
-curl -s https://learn.zone01kisumu.ke/assets/superhero/all.json | jq -r --arg id "$HERO_ID" '.[] | select(.id == ($id|tonumber)) | .connections.relatives | if type=="array" then join(", ") else . end' | tr '\n' ' '
+curl -s https://learn.zone01kisumu.ke/assets/superhero/all.json | jq -r --arg id "$HERO_ID" '.[] | select(.id == ($id|tonumber)) | .connections.relatives | sed 's/"//g' ' '
