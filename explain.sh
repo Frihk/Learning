@@ -1,6 +1,6 @@
 echo "Annabel Church"
 
-basename 699607
+echo "asename 699607"
 
 echo "Joe Germuska"
 
