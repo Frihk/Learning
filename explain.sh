@@ -1,6 +1,6 @@
 echo "Annabel Church"
 
-echo  "699607"
+echo  699607
 
 echo "Blue Honda"
 
