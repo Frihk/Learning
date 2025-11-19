@@ -1,6 +1,6 @@
 echo "Annabel Church"
 
-basename interviews/interview-9620713
+basename 9620713
 
 echo "Blue Honda"
 
