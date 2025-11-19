@@ -7,5 +7,5 @@ echo $iNUM
 
 cat "interviews/interview-${iNUM}"
 
-echo "$main_SUSPECT"
+echo "$MAIN_SUSPECT"
 
