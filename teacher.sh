@@ -1,21 +1,11 @@
 #!/bin/bash
 
 
-INTERVIEW_PATH=$(grep -i "Ms. Church" the-final-cl-test/mystery/interviews/*)
+iNUM=$(head -n 179 the-final-cl-test/mystery/streets/Buckingham_Place | tail -n 1 | grep -o '[0-9]\+')
 
+echo $iNUM
 
-INTERVIEW_NUMBER=$(echo "$INTERVIEW_PATH" | grep -oE '[0-9]+')
+cat "the-final-cl-test/mystery/interviews/interview-${iNUM}"
 
+echo "$main_SUSPECT"
 
-export INTERVIEW_NUMBER
-
-
-
-echo "$INTERVIEW_NUMBER"
-
-
-
-cat "$INTERVIEW_PATH"
-
-
-echo "Dartey Henv"
