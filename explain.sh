@@ -4,9 +4,9 @@ basename interviews/interview-9620713
 
 echo "Blue Honda"
 
-echo "Joe Germuska"
+echo "Brian Boyer"
 
-echo "Aron Pilhofer"
+echo "Joe Germuska"
 
 echo "Matt Waite"
 
