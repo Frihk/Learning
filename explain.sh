@@ -6,6 +6,6 @@ echo Blue Honda
 
 echo Joe Germuska
 
-echo Helle maher
+echo Hellen maher
 
 echo Erika Owens
