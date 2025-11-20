@@ -1,14 +1,28 @@
 package piscine
 
 import (
-	"strconv"
-
 	"github.com/01-edu/z01"
 )
 
-func PrintNbrStr(n int) {
-	str := strconv.Itoa(n) // convert int to string
-	for _, c := range str {
-		z01.PrintRune(c)
+func PrintNbr(n int) {
+	if n == 0 {
+		z01.PrintRune('0')
+		return
+	}
+
+	if n < 0 {
+		z01.PrintRune('-')
+		n = -n
+	}
+
+	var digits []rune
+
+	for n > 0 {
+		digits = append(digits, rune(n%10+'0'))
+		n /= 10
+	}
+
+	for i := len(digits) - 1; i >= 0; i-- {
+		z01.PrintRune(digits[i])
 	}
 }
