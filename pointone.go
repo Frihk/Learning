@@ -1,11 +1,13 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
-func main() {
-	n := 1
-	j := &n
-	fmt.Println(*j)
+func PointOne(n *int) {
+	*n = 1
 }
+
+// func main() {
+// 	n := 1
+// 	j := &n
+// 	fmt.Println(*j)
+// }
