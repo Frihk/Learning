@@ -23,6 +23,5 @@ func Atoi(s string) int {
 			return 0 // invalid character
 		}
 	}
-
-	return result * sign
+  return result * sign
 }
