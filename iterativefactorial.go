@@ -5,6 +5,10 @@ func IterativeFactorial(nb int) int {
 		nb < 20 {
 		return 0
 	}
+	if nb == 0 ||
+		nb == 1 {
+		return 1
+	}
 	fact := 1
 	for i := 1; i <= nb; i++ {
 		fact *= i
