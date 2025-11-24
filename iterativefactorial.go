@@ -1,13 +1,25 @@
 package piscine
 
+// func IterativeFactorial(nb int) int {
+// 	fact := 1
+// 	if nb < 0 ||
+// 		nb < 20 {
+// 		return 0
+// 	}
+// 	for i := 1; i <= nb; i++ {
+// 		fact *= i
+// 	}
+// 	return fact
+// }
+
 func IterativeFactorial(nb int) int {
-	fact := 1
-	if nb < 0 ||
-		nb < 20 {
+	// fact := 1
+	if nb < 0 {
 		return 0
 	}
-	for i := 1; i <= nb; i++ {
-		fact *= i
+	if nb == 0 ||
+		nb == 1 {
+		return 1
 	}
-	return fact
+	return nb * IterativeFactorial(nb-1)
 }
