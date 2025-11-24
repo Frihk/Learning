@@ -2,7 +2,7 @@ package piscine
 
 func IterativeFactorial(nb int) int {
 	fact := 0
-	if nd < 0 {
+	if nb < 0 {
 		return 0
 	}
 	for i := 1; i <= nb; i++ {
