@@ -8,5 +8,5 @@ func FindNextPrime(nb int) int {
 	if IsPrime(nb) == true {
 		return nb
 	}
-	return FindNextPrime(nb - 1)
+	return FindNextPrime(nb + 1)
 }
