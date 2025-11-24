@@ -1,20 +1,16 @@
 package piscine
 
 func IterativeFactorial(nb int) int {
-	if nb < 0 {
+	if nb < 0 || nb > 20 {
 		return 0
-	} else if nb == 0 || nb == 1 {
+	} else if nb == 0 {
 		return 1
 	} else {
-		result := 1
-		for i := 1; i < nb+1; i++ {
-			result *= i
-			if result > 6227020800 {
-				result = 0
-				break
-			}
+		var n int = 1
+		for i := 1; i <= nb; i++ {
+			n *= i
 		}
-		return result
+		return n
 	}
 }
 
