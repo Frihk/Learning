@@ -8,6 +8,7 @@ func Atoi(s string) int {
 	result := 0
 	sign := 1
 	start := 0
+	//
 
 	if s[0] == '-' {
 		sign = -1
