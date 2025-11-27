@@ -5,7 +5,5 @@ func BasicJoin(strs []string) string {
 	for i := range strs {
 		result += strs[i]
 	}
-
 	return result
-
 }
