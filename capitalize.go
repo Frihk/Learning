@@ -1,31 +1,26 @@
 package piscine
 
-
 func Capitalize(s string) string {
-    start := true
-    result := ""
+	start := true
+	result := ""
 
-    for _, c := range s {
-        isUpper := c >= 'A' && c <= 'Z'
-        isLower := c >= 'a' && c <= 'z'
+	for _, c := range s {
+		isUpper := c >= 'A' && c <= 'Z'
+		isLower := c >= 'a' && c <= 'z'
 
-        if start && isLower {
-            // Capitalize first letter of the word if it's lowercase
-            result += string(c - 32)
-        } else if !start && isUpper {
-            // Lowercase all other letters
-            result += string(c + 32)
-        } else {
-            result += string(c)
-        }
+		if start && isLower {
+			result += string(c - 32)
+		} else if !start && isUpper {
+			result += string(c + 32)
+		} else {
+			result += string(c)
+		}
+		if (c < 'A' || c > 'Z') && (c < 'a' || c > 'z') && (c < '0' || c > '9') {
+			start = true
+		} else {
+			start = false
+		}
+	}
 
-        // Update start: only after non-letter AND non-digit
-        if (c < 'A' || c > 'Z') && (c < 'a' || c > 'z') && (c < '0' || c > '9') {
-            start = true
-        } else {
-            start = false
-        }
-    }
-
-    return result
+	return result
 }
