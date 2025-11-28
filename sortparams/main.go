@@ -34,58 +34,23 @@ import (
 	}
 } */
 
+func SortTable(table []string) {
+	for i := 0; i < len(table)-1; i++ {
+		for j := i + 1; j < len(table); j++ {
+			if table[i] > table[j] {
+				table[i], table[j] = table[j], table[i]
+			}
+		}
+	}
+}
+
 func main() {
-	a := os.Args[1:]
-	for x, i := range a {
-		for y, j := range a {
-			if i < j {
-				a[x], a[y] = a[y], a[x]
-			}
+	args := os.Args[1:]
+	SortTable(args)
+	for _, arg := range args {
+		for _, b := range arg {
+			z01.PrintRune(rune(b))
 		}
-	}
-	for i := 0; i < len(a); i++ {
-		r := []rune(a[i])
-
-		if r[0] < 'A' {
-			for j := range a[i] {
-				z01.PrintRune(r[j])
-			}
-			z01.PrintRune('\n')
-		}
-
-	}
-
-	for i := 0; i < len(a); i++ {
-		r := []rune(a[i])
-
-		if r[0] >= '0' && r[0] <= '9' {
-			for j := range a[i] {
-				z01.PrintRune(r[j])
-			}
-			z01.PrintRune('\n')
-		}
-
-	}
-	for i := 0; i < len(a); i++ {
-		r := []rune(a[i])
-
-		if r[0] >= 'A' && r[0] <= 'Z' {
-			for j := range a[i] {
-				z01.PrintRune(r[j])
-			}
-			z01.PrintRune('\n')
-		}
-
-	}
-	for i := 0; i < len(a); i++ {
-		r := []rune(a[i])
-
-		if r[0] >= 'a' && r[0] <= 'z' {
-			for j := range a[i] {
-				z01.PrintRune(r[j])
-			}
-			z01.PrintRune('\n')
-		}
-
+		z01.PrintRune('\n')
 	}
 }
