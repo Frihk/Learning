@@ -3,10 +3,15 @@ package piscine
 func Capitalize(s string) string {
 	start := true
 	result := ""
+
 	for _, c := range s {
-		if start && c >= 'a' && c <= 'z' {
+		isUpper := c >= 'A' && c <= 'Z'
+		isLower := c >= 'a' && c <= 'z'
+
+		if start && isLower {
 			result += string(c - 32)
-			start = false
+		} else if !start && isUpper {
+			result += string(c + 32)
 		} else {
 			result += string(c)
 		}
@@ -16,5 +21,6 @@ func Capitalize(s string) string {
 			start = false
 		}
 	}
+
 	return result
 }
