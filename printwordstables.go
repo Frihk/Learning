@@ -1,6 +1,6 @@
 package piscine
 
-import "fmt"
+import "github.com/01-edu/z01"
 
 func PrintWordsTables(a []string) {
 	results := ""
@@ -10,5 +10,7 @@ func PrintWordsTables(a []string) {
 			results += "\n"
 		}
 	}
-	fmt.Print(results)
+	for _, r := range results {
+		z01.PrintRune(r)
+	}
 }
