@@ -13,10 +13,10 @@ func abs(x int) int {
 }
 
 func Checker(pos []int, row int, col int) bool {
-	//loop through previous columns
-	//check same row
-	//check diagonal
-	//return true if no conflict
+	// loop through previous columns
+	// check same row
+	// check diagonal
+	// return true if no conflict
 	for i := 0; i < col; i++ {
 		if pos[i] == row {
 			return false
