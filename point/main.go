@@ -2,6 +2,7 @@ package main
 
 import "github.com/01-edu/z01"
 
+// import "fmt"
 type point struct {
 	x int
 	y int
@@ -16,32 +17,45 @@ func main() {
 	points := &point{}
 
 	setPoint(points)
-	x := "x = "
-	y := " y = "
 
-	rx := []rune{}
-	ry := []rune{}
-	for points.x != 0 {
-		rx = append(rx, rune(points.x%10)+'0')
-		points.x /= 10
-	}
-	for points.y != 0 {
-		ry = append(ry, rune(points.y%10)+'0')
-		points.y /= 10
-	}
-
-	for _, i := range x {
-		z01.PrintRune(rune(i))
-	}
-	for i := len(rx) - 1; i >= 0; i-- {
-		z01.PrintRune(rx[i])
-	}
+	z01.PrintRune('x')
+	z01.PrintRune(' ')
+	z01.PrintRune('=')
+	z01.PrintRune(' ')
+	IntoRune(points.x)
 	z01.PrintRune(',')
-	for _, i := range y {
-		z01.PrintRune(rune(i))
-	}
-	for i := len(ry) - 1; i >= 0; i-- {
-		z01.PrintRune(ry[i])
-	}
+	z01.PrintRune(' ')
+	z01.PrintRune('y')
+	z01.PrintRune(' ')
+	z01.PrintRune('=')
+	z01.PrintRune(' ')
+	IntoRune(points.y)
 	z01.PrintRune('\n')
+	//	fmt.Printf("x = %d, y = %d\n",points.x, points.y)
+}
+
+func check(r int) {
+	c := '0'
+	if r == 0 {
+		z01.PrintRune(c)
+		return
+	}
+	for i := 1; i <= r%10; i++ {
+		c++
+	}
+	for i := -1; i >= r%10; i-- {
+		c++
+	}
+	if r/10 != 0 {
+		check(r / 10)
+	}
+	z01.PrintRune(c)
+	return
+}
+
+func IntoRune(n int) {
+	if n < 0 {
+		z01.PrintRune('-')
+	}
+	check(n)
 }
