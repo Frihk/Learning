@@ -58,29 +58,26 @@ func setPoint(ptr *point) {
 	ptr.y = 21
 }
 
-// printString prints a string using z01.PrintRune
-func printString(s string) {
+// printString prints a string using only z01.PrintRune
+func Displaystr(s string) {
 	for i := 0; i < len(s); i++ {
 		z01.PrintRune(rune(s[i]))
 	}
 }
 
-// printNumber prints a non-negative integer using z01.PrintRune
-func printNumber(n int) {
+// printNumber prints a non-negative integer using only z01.PrintRune
+func Diplaynum(n int) {
 	if n == 0 {
 		z01.PrintRune('0')
 		return
 	}
 
-	// Collect digits in reverse
 	digits := []rune{}
 	for n > 0 {
-		d := n % 10
-		digits = append(digits, rune('0'+d))
+		digits = append(digits, rune('0'+(n%10)))
 		n /= 10
 	}
 
-	// Print digits in correct order
 	for i := len(digits) - 1; i >= 0; i-- {
 		z01.PrintRune(digits[i])
 	}
@@ -90,9 +87,9 @@ func main() {
 	p := &point{}
 	setPoint(p)
 
-	printString("x = ")
-	printNumber(p.x)
-	printString(", y = ")
-	printNumber(p.y)
+	Displaystr("x = ")
+	Diplaynum(p.x)
+	Displaystr(", y = ")
+	Diplaynum(p.y)
 	z01.PrintRune('\n')
 }
