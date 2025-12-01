@@ -1,5 +1,7 @@
 package piscine
 
+import "github.com/01-edu/z01"
+
 func PrintNbrBase(nbr int, base string) {
 	basel := len(base)
 	digits := []rune{}
@@ -38,5 +40,4 @@ func PrintNbrBase(nbr int, base string) {
 	for i := len(digits) - 1; i >= 0; i-- {
 		z01.PrintRune(digits[i])
 	}
-
 }

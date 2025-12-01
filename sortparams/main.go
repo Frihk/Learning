@@ -34,11 +34,11 @@ import (
 	}
 } */
 
-func SortTable(table []string) {
-	for i := 0; i < len(table)-1; i++ {
-		for j := i + 1; j < len(table); j++ {
-			if table[i] > table[j] {
-				table[i], table[j] = table[j], table[i]
+func SortTable(args []string) {
+	for i := 0; i < len(args)-1; i++ {
+		for j := i + 1; j < len(args); j++ {
+			if args[i] > args[j] {
+				args[i], args[j] = args[j], args[i]
 			}
 		}
 	}
