@@ -39,13 +39,13 @@ func main() {
 	}
 
 	if length > 1 {
-		fmt.Print("Too many arguments")
+		fmt.Println("Too many arguments")
 	} else if length == 0 {
-		fmt.Print("File name missing")
+		fmt.Println("File name missing")
 	} else if arguments[0] == "quest8.txt" {
 		content, err := os.ReadFile(arguments[0])
 		if err != nil {
-			fmt.Print(err.Error())
+			fmt.Println(err.Error())
 			return
 		}
 		fmt.Print(string(content))
