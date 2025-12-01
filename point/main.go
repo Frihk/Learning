@@ -2,10 +2,17 @@ package main
 
 import "github.com/01-edu/z01"
 
-// import "fmt"
 type point struct {
 	x int
 	y int
+}
+
+func PrintStr(str string) {
+	arrayStr := []rune(str)
+
+	for i := range arrayStr {
+		z01.PrintRune(arrayStr[i])
+	}
 }
 
 func setPoint(ptr *point) {
@@ -13,49 +20,25 @@ func setPoint(ptr *point) {
 	ptr.y = 21
 }
 
+func PrintInt(a int) {
+	r := '0'
+	if a/10 > 0 {
+		PrintInt(a / 10)
+	}
+	for i := 0; i < a%10; i++ {
+		r++
+	}
+	z01.PrintRune(r)
+}
+
 func main() {
-	points := &point{}
+	var points point
 
-	setPoint(points)
+	setPoint(&points)
 
-	z01.PrintRune('x')
-	z01.PrintRune(' ')
-	z01.PrintRune('=')
-	z01.PrintRune(' ')
-	IntoRune(points.x)
-	z01.PrintRune(',')
-	z01.PrintRune(' ')
-	z01.PrintRune('y')
-	z01.PrintRune(' ')
-	z01.PrintRune('=')
-	z01.PrintRune(' ')
-	IntoRune(points.y)
+	PrintStr("x = ")
+	PrintInt(points.x)
+	PrintStr(", y = ")
+	PrintInt(points.y)
 	z01.PrintRune('\n')
-	//	fmt.Printf("x = %d, y = %d\n",points.x, points.y)
-}
-
-func check(r int) {
-	c := '0'
-	if r == 0 {
-		z01.PrintRune(c)
-		return
-	}
-	for i := 1; i <= r%10; i++ {
-		c++
-	}
-	for i := -1; i >= r%10; i-- {
-		c++
-	}
-	if r/10 != 0 {
-		check(r / 10)
-	}
-	z01.PrintRune(c)
-	return
-}
-
-func IntoRune(n int) {
-	if n < 0 {
-		z01.PrintRune('-')
-	}
-	check(n)
 }
