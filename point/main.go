@@ -1,77 +1,82 @@
-package main
+// package main
+
+// // import "github.com/01-edu/z01"
+
+// // type ptr struct {
+// // 	x int
+// // 	y int
+// // }
+
+// // func setPoint(pointer *ptr, newpointx int, newpointy int) {
+// // 	pointer.x = newpointx
+// // 	pointer.y = newpointy
+// // }
+
+// // func main() {
+// // 	points := ptr{}
+// // 	setPoint(&points, 42, 21)
+
+// // }
 
 // import "github.com/01-edu/z01"
 
-// type ptr struct {
+// type point struct {
 // 	x int
 // 	y int
 // }
 
-// func setPoint(pointer *ptr, newpointx int, newpointy int) {
-// 	pointer.x = newpointx
-// 	pointer.y = newpointy
-// }
-
-// func main() {
-// 	points := ptr{}
-// 	setPoint(&points, 42, 21)
-
-// }
-
-// import "github.com/01-edu/z01"
-
-// type ptr struct {
-// 	x int
-// 	y int
-// }
-
-// func setPoint(ptr *ptr) {
+// func setPoint(ptr *point) {
 // 	ptr.x = 42
 // 	ptr.y = 21
 // }
 
-// func main() {
-// 	point := ptr{}
-// 	setPoint(&point)
-
-// 	z01.PrintRune('x')
-// 	z01.PrintRune(' ')
-// 	z01.PrintRune('=')
-// 	z01.PrintRune(' ')
-// 	z01.PrintRune('4')
-// 	z01.PrintRune('2')
-// 	z01.PrintRune('\n')
-// 	z01.PrintRune('y')
-// 	z01.PrintRune(' ')
-// 	z01.PrintRune('=')
-// 	z01.PrintRune(' ')
-// 	z01.PrintRune('2')
-// 	z01.PrintRune('1')
+// func print(s string) {
+// 	for i := 0; i < len(s); i++ {
+// 		z01.PrintRune(rune(s[i]))
+// 	}
 // 	z01.PrintRune('\n')
 // }
 
-import "github.com/01-edu/z01"
+// func main() {
+// 	p := &point{}
+// 	setPoint(p)
 
-type point struct {
-	x int
-	y int
-}
+// 	print("x = 42, y = 21") // works, but values are hardcoded
+// }
 
-func setPoint(ptr *point) {
-	ptr.x = 42
-	ptr.y = 21
-}
+package main
 
-func print(s string) {
-	for i := 0; i < len(s); i++ {
-		z01.PrintRune(rune(s[i]))
-	}
-	z01.PrintRune('\n')
-}
+import (
+	"os"
+
+	"github.com/01-edu/z01"
+)
 
 func main() {
-	p := &point{}
-	setPoint(p)
+	args := os.Args[1:]
+	upper := false
 
-	print("x = 42, y = 21") // works, but values are hardcoded
+	// detect --upper flag
+	if len(args) > 0 && args[0] == "--upper" {
+		upper = true
+		args = args[1:]
+	}
+
+	for _, s := range args { // iterate actual arguments
+		c := 0
+		for _, r := range s { // iterate runes
+			if r >= '0' && r <= '9' {
+				c = c*10 + int(r-'0')
+			}
+		}
+
+		if !(c >= 1 && c <= 26) {
+			z01.PrintRune(' ')
+		} else if upper {
+			z01.PrintRune(rune('A' + (c - 1)))
+		} else {
+			z01.PrintRune(rune('a' + (c - 1)))
+		}
+	}
+	z01.PrintRune('\n')
 }
