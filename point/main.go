@@ -25,48 +25,27 @@ type ptr struct {
 	y int
 }
 
-func setPoint(pointer *ptr, newpointx int, newpointy int) {
-	pointer.x = newpointx
-	pointer.y = newpointy
-}
-
-func printStr(s string) {
-	for _, r := range s {
-		z01.PrintRune(r)
-	}
-}
-
-func printNbr(n int) {
-	if n == 0 {
-		z01.PrintRune('0')
-		return
-	}
-
-	if n < 0 {
-		z01.PrintRune('-')
-		n = -n
-	}
-
-	var digits []rune
-	for n > 0 {
-		digits = append(digits, rune('0'+n%10))
-		n /= 10
-	}
-
-	for i := len(digits) - 1; i >= 0; i-- {
-		z01.PrintRune(digits[i])
-	}
+func setPoint(ptr *ptr) {
+	ptr.x = 42
+	ptr.y = 21
 }
 
 func main() {
-	points := ptr{}
-	setPoint(&points, 42, 21)
+	point := ptr{}
+	setPoint(&point)
 
-	printStr("x = ")
-	printNbr(points.x)
+	z01.PrintRune('x')
+	z01.PrintRune(' ')
+	z01.PrintRune('=')
+	z01.PrintRune(' ')
+	z01.PrintRune('4')
+	z01.PrintRune('2')
 	z01.PrintRune('\n')
-
-	printStr("y = ")
-	printNbr(points.y)
+	z01.PrintRune('y')
+	z01.PrintRune(' ')
+	z01.PrintRune('=')
+	z01.PrintRune(' ')
+	z01.PrintRune('2')
+	z01.PrintRune('1')
 	z01.PrintRune('\n')
 }
