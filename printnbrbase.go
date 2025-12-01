@@ -1,10 +1,5 @@
 package piscine
 
-import (
-	"github.com/01-edu/z01"
-	// "github.com/01-edu/z01.PrintRune"
-)
-
 func PrintNbrBase(nbr int, base string) {
 	basel := len(base)
 	digits := []rune{}
