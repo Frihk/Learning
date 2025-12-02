@@ -5,12 +5,22 @@ func f(a, b int) int {
 }
 
 func IsSorted(f func(a, b int) int, a []int) bool {
+	if len(a) < 2 {
+		return true
+	}
+	asc := true
+	desc := true
+
 	for i := 0; i < len(a)-1; i++ {
-		if f(a[i], a[i+1]) > 0 {
-			return false
+		cmp := f(a[i], a[i+1])
+		if cmp > 0 {
+			asc = false
+		}
+		if cmp < 0 {
+			desc = false
 		}
 	}
-	return true
+	return asc || desc
 }
 
 // func main() {
