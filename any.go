@@ -4,10 +4,10 @@ func Any(f func(string) bool, a []string) bool {
 	// str := ""
 	for _, c := range a {
 		if f(c) {
-			return false
+			return true
 		}
 	}
-	return true
+	return false
 }
 
 // func main() {
