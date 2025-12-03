@@ -14,5 +14,5 @@ func Unmatch(a []int) int {
 			return a[i]
 		}
 	}
-	return 0
+	return -1
 }
