@@ -11,11 +11,20 @@ func PrintStr(str string) {
 	arrayStr := []rune(str)
 
 	for i := range arrayStr {
-		z01.PrintRune(arrayStr[i])
+		z01.Prfunc Compact(ptr *[]string) int {
+	part := [] string{}
+	for _,i :=  range *ptr{
+		if i != ""{
+			part = append(part,i)
+		}
+	}
+	*ptr = part
+	return len(part)
+}intRune(arrayStr[i])
 	}
 }
 
-func setPoint(ptr *point) {
+func setPoint(ptr *point) {		
 	ptr.x = 42
 	ptr.y = 21
 }

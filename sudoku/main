@@ -1,0 +1,15 @@
+package main
+
+import (
+"os"
+"fmt"
+)
+
+func main() {
+	grid := make([][]rune ,9)
+	arg := os.Args[1:]
+
+	if len(arg) != 9 {
+		fmt.Print("Error")
+	}
+}
