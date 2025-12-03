@@ -12,6 +12,7 @@ func main() {
 			string(c) == "galaxy" ||
 			string(c) == "galaxy 01" {
 			fmt.Println("Alert!!!")
+			break
 		}
 	}
 }
