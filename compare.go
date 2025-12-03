@@ -19,7 +19,7 @@ func Compare(a, b string) int {
 	case !firstEqual && lastEqual:
 		return -1
 	case !firstEqual && !lastEqual:
-		if a[0] > b[0] { 
+		if a[0] > b[0] {
 			return 1
 		}
 		return -1
