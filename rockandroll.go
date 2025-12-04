@@ -13,5 +13,5 @@ func RockAndRoll(n int) string {
 	if n%3 == 0o0 {
 		return "roll\n"
 	}
-	return "error: non divisible"
+	return "error: non divisible\n"
 }
