@@ -53,7 +53,3 @@ func Eightofqueens() {
 	col := 0
 	Placer(positions[:], col)
 }
-
-func main() {
-	Eightofqueens()
-}
