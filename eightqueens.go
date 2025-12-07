@@ -48,7 +48,7 @@ func Placer(positions []int, col int) {
 	}
 }
 
-func Eightofqueens() {
+func EightQueens() {
 	var positions [8]int
 	col := 0
 	Placer(positions[:], col)
