@@ -28,30 +28,24 @@ func PrintNbrBase(nbr int, base string) {
 		}
 	}
 
-	// sign handling WITHOUT bool (0 = no sign, '-' = negative)
-	var sign rune = 0
+	// Convert to uint64 safely
+	var unbr uint64
 	if nbr < 0 {
-		sign = '-'
-		// Watch out: this overflows on MinInt but piscine tests ignore this.
-		nbr = -nbr
+		z01.PrintRune('-')
+		unbr = uint64(-(nbr + 1)) + 1 // safe conversion of MinInt
+	} else {
+		unbr = uint64(nbr)
 	}
 
-	// Prepare digit slice
-	digits := []rune{}
-
-	if nbr == 0 {
+	// Write digits
+	var digits []rune
+	if unbr == 0 {
 		digits = append(digits, rune(base[0]))
 	}
-
-	for nbr > 0 {
-		rem := nbr % basel
+	for unbr > 0 {
+		rem := unbr % uint64(basel)
 		digits = append(digits, rune(base[rem]))
-		nbr /= basel
-	}
-
-	// Print sign if any
-	if sign != 0 {
-		z01.PrintRune(sign)
+		unbr /= uint64(basel)
 	}
 
 	// Print digits in reverse
