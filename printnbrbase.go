@@ -5,6 +5,7 @@ import "github.com/01-edu/z01"
 func PrintNbrBase(nbr int, base string) {
 	basel := len(base)
 	digits := []rune{}
+    sign := ''
 	if basel < 2 {
 		z01.PrintRune('N')
 		z01.PrintRune('V')
@@ -25,7 +26,7 @@ func PrintNbrBase(nbr int, base string) {
 		}
 	}
 	if nbr < 0 {
-		z01.PrintRune('-')
+		sign = '-'
 		nbr = -nbr
 	}
 	if nbr == 0 {
@@ -33,10 +34,12 @@ func PrintNbrBase(nbr int, base string) {
 		return
 	}
 	for nbr > 0 {
+        sign = ''
 		rem := nbr % basel
 		digits = (append(digits, rune(base[rem])))
 		nbr = nbr / len(base)
 	}
+      digits = (append, sign)
 	for i := len(digits) - 1; i >= 0; i-- {
 		z01.PrintRune(digits[i])
 	}
