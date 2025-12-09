@@ -1,5 +1,11 @@
 package piscine
 
+type TreeNode struct {
+    Left, Right, Parent *TreeNode
+    Data                string
+}
+
+
 func BTreeDeleteNode(root, node *TreeNode) *TreeNode {
 	if node.Left == nil {
 		root = BTreeTransplant(root, node, node.Right)
