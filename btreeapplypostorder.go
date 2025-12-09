@@ -9,7 +9,7 @@ func BTreeApplyPostorder(root *TreeNode, f func(...interface{}) (int, error)) {
 	var lastVisited *TreeNode
 
 	for len(new) > 0 {
-		current := new[len(stack)-1]
+		current := new[len(new)-1]
 
 		if lastVisited == nil || lastVisited.Left == current || lastVisited.Right == current {
 			if current.Left != nil {
