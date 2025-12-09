@@ -24,4 +24,3 @@ func ListPushBack(l *List, data interface{}) {
 	}
 	temp.Next = newNode
 }
-
