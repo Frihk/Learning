@@ -17,7 +17,6 @@ func ListPushBack(l *List, data interface{}) {
 		l.Head = newNode
 		return
 	}
-
 	temp := l.Head
 	for temp.Next != nil {
 		temp = temp.Next
@@ -31,7 +30,6 @@ func ListPushBack(l *List, data interface{}) {
 //     if l.Head == nil {
 //         l.Head = newNode
 //     }
-
 //     l.Tail.Next = newNode
 //     l.Tail = newNode
 // }
