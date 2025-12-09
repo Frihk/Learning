@@ -6,6 +6,29 @@ type TreeNode struct {
     Data                string
 }
 
+func BTreeMin(root *TreeNode) *TreeNode {
+    if root == nil {
+        return nil
+    }
+    current := root
+    for current.Left != nil {
+        current = current.Left
+    }
+    return current
+}
+
+func BTreeMax(root *TreeNode) *TreeNode {
+    if root == nil {
+        return nil
+    }
+    current := root
+    for current.Right != nil {
+        current = current.Right
+    }
+    return current
+}
+
+
 func BTreeDeleteNode(root, node *TreeNode) *TreeNode {
 	if root == nil {
 		return nil
