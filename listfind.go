@@ -31,3 +31,5 @@ func ListFind(l *List, ref interface{}, comp func(a, b interface{}) bool) *inter
 		current = current.Next
 	}
 	return nil
+
+}
