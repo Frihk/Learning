@@ -10,26 +10,27 @@ type List struct {
 	Tail *NodeL
 }
 
+// func ListPushBack(l *List, data interface{}) {
+// 	newNode := &NodeL{Data: data}
+
+// 	if l.Head == nil {
+// 		l.Head = newNode
+// 		return
+// 	}
+// 	temp := l.Head
+// 	for temp.Next != nil {
+// 		temp = temp.Next
+// 	}
+// 	temp.Next = newNode
+// }
+
 func ListPushBack(l *List, data interface{}) {
 	newNode := &NodeL{Data: data}
 
 	if l.Head == nil {
 		l.Head = newNode
-		return
+		l.Tail = newNode
 	}
-	temp := l.Head
-	for temp.Next != nil {
-		temp = temp.Next
-	}
-	temp.Next = newNode
+	l.Tail.Next = newNode
+	l.Tail = newNode
 }
-
-// func ListPushBack(l *List, data interface{}) {
-//     newNode := &NodeL{Data: data}
-
-//     if l.Head == nil {
-//         l.Head = newNode
-//     }
-//     l.Tail.Next = newNode
-//     l.Tail = newNode
-// }
