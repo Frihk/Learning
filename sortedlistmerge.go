@@ -20,5 +20,9 @@ func SortedListMerge(n1 *NodeI, n2 *NodeI) *NodeI {
 		}
 		n1 = n1.Next
 	}
+	if n2 != nil {
+		n1.Next = n2
+	}
+
 	return head
 }
