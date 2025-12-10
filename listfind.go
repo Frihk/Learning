@@ -9,6 +9,15 @@ func CompInt(a, b interface{}) bool {
 	return ai == bi
 }
 
+func CompStr(a, b interface{}) bool {
+	s1, ok1 := a.(string)
+	s2, ok2 := b.(string)
+	if !ok1 || !ok2 {
+		return false
+	}
+	return s1 == s2
+}
+
 func ListFind(l *List, ref interface{}, comp func(a, b interface{}) bool) *interface{} {
 	if l == nil || l.Head == nil {
 		return nil
