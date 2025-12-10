@@ -1,15 +1,5 @@
 package piscine
 
-type NodeL struct {
-	Data interface{}
-	Next *NodeL
-}
-
-type List struct {
-	Head *NodeL
-	Tail *NodeL
-}
-
 func CompInt(a, b interface{}) bool {
 	ai, ok1 := a.(int)
 	bi, ok2 := b.(int)
