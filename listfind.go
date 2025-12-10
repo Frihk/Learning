@@ -1,25 +1,7 @@
 package piscine
 
-func CompStr(a, b interface{}) bool {
-	s1, ok1 := a.(string)
-	s2, ok2 := b.(string)
-	if !ok1 || !ok2 {
-		return false
-	}
-	return s1 == s2
-}
-
-func CompInt(a, b interface{}) bool {
-	i1, ok1 := a.(int)
-	i2, ok2 := b.(int)
-	if !ok1 || !ok2 {
-		return false
-	}
-	return i1 == i2
-}
-
 func ListFind(l *List, ref interface{}, comp func(a, b interface{}) bool) *interface{} {
-	if l == nil {
+	if l == nil || l.Head == nil {
 		return nil
 	}
 
@@ -31,5 +13,4 @@ func ListFind(l *List, ref interface{}, comp func(a, b interface{}) bool) *inter
 		current = current.Next
 	}
 	return nil
-
 }
